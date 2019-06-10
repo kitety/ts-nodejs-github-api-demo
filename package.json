@@ -1,0 +1,20 @@
+{
+  "name": "ts-nodejs-github-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node out/index.js",
+    "tsc": "tsc -w",
+    "dev": "nodemon out/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/request": "^2.48.1"
+  },
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
