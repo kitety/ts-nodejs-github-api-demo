@@ -9,6 +9,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var request = __importStar(require("request"));
 var User_1 = require("./User");
+var Repo_1 = require("./Repo");
 var options = {
     headers: {
         'User-Agent': 'request'
@@ -23,6 +24,12 @@ var GithubApiService = /** @class */ (function () {
             // let user: User = new User(JSON.parse(body));
             var user = new User_1.User(body);
             cb(user);
+        });
+    };
+    GithubApiService.prototype.getRepos = function (userName, cb) {
+        request.get("https://api.github.com/users/" + userName + "/repos", options, function (error, response, body) {
+            var repos = body.map(function (item) { return new Repo_1.Repo(item); });
+            cb(repos);
         });
     };
     return GithubApiService;
