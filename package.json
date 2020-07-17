@@ -16,7 +16,7 @@
     "@types/request": "^2.48.1"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "request": "^2.88.0"
   }
 }
